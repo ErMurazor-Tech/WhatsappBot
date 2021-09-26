@@ -3,7 +3,7 @@
 
 # 😕 **Queen Hesh : Next Level WhatsApp BOTTO by Er Murazor** 😕
 
-> A Fully Modular and Efficient Bot <br>
+> 😕A Fully Modular and Efficient Bot😕<br>
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/ErMurazor-Tech/WhatsappBot/blob/main)
 
