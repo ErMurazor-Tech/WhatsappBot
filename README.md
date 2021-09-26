@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://ibb.co/wQ4GK21"><img src="https://i.ibb.co/HPqwr9Q/whatsapp-botto-void-init.png" alt="whatsapp-botto-void-init" border="0"></a>
+<a href="https://ibb.co/wQ4GK21"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgifer.com%2Fen%2Fgifs%2Fasia-baby&psig=AOvVaw0s5m1RQUUCRd5ZJQ8o5DoN&ust=1632713661434000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKCq-sPam_MCFQAAAAAdAAAAABAD" alt="whatsapp-botto-void-init" border="0"></a>
 
 # **Kaoi : Next Level Void WhatsApp BOTTO**
 [![CodeFactor](https://www.codefactor.io/repository/github/prajjwaldatir/kaoi/badge)](https://www.codefactor.io/repository/github/prajjwaldatir/kaoi)
