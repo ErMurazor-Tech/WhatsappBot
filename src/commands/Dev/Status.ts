@@ -8,7 +8,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'status',
-            description: 'Puts the text as status ',
+            description: 'ඔබගේ වචන හෝ පින්තූර status ලෙස පල කරයි ',
             category: 'dev',
             dm: true,
             usage: `${client.config.prefix}status [text] [tag Image/Video]`
@@ -17,13 +17,13 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
         if (!this.client.config.mods?.includes(M.sender.jid))
-            return void (await M.reply(`This command is only for Owner of the Bot`))
+            return void (await M.reply(`මෙම command එක බොට්ගෙහි අයිතිකරුට පමණක් භාවිතා කල හැක`))
         // const text = parsedArgs.joined
         parsedArgs.flags.forEach((flag) => (parsedArgs.joined = parsedArgs.joined.replace(flag, '')))
         const args = parsedArgs.joined.split(',')
         let buffer
         if (M.quoted?.message?.message?.imageMessage) {
-            M.reply('⭐ Posting Image Status')
+            M.reply('⭐ පින්තූරය පල කරමින් සිටිමි')
             let i = 0
             while(i<5){
             try{
@@ -41,7 +41,7 @@ export default class Command extends BaseCommand {
         }
             // this.client.sendMessage('status@broadcast', buffer, MessageType.image)
         } else if (M.WAMessage.message?.imageMessage) {
-            M.reply('Posting Image Status ⭐')
+            M.reply('⭐ පින්තූරය පල කරමින් සිටිමි')
             buffer = await this.client.downloadMediaMessage(M.WAMessage)
             const caption = args[0] || ''
             // M.reply(`caption : ${caption}`)
@@ -50,7 +50,7 @@ export default class Command extends BaseCommand {
             })
             // this.client.sendMessage('status@broadcast', buffer, MessageType.image)
         } else if (M.quoted?.message?.message?.videoMessage) {
-            M.reply('Posting Video Status ✨')
+            M.reply('වීඩියෝව පලකරමින් සිටිමි ✨')
             buffer = await this.client.downloadMediaMessage(M.quoted.message)
             const caption = args[0] || ''
             // M.reply(`caption : ${caption}`)
@@ -59,7 +59,7 @@ export default class Command extends BaseCommand {
             })
             // this.client.sendMessage('status@broadcast', buffer, MessageType.video)
         } else if (M.WAMessage.message?.videoMessage) {
-            M.reply('✨ Posting Video Status')
+            M.reply('✨ වීඩියෝව පල කරමින් සිටිමි')
             buffer = await this.client.downloadMediaMessage(M.WAMessage)
             const caption = args[0] || ''
             // M.reply(`caption : ${caption}`)
@@ -68,7 +68,7 @@ export default class Command extends BaseCommand {
             })
             // this.client.sendMessage('status@broadcast', buffer, MessageType.video)
         } else if (M.quoted?.message?.message?.conversation) {
-            M.reply('✨ Posting Text Status')
+            M.reply('✨ ඔබගේ ලියමන පලකරමින් සිටිමි')
             const text = M.quoted?.message?.message?.conversation || ''
             const backgroundArgb =
                 args.slice(3).map((arg) => `${parseInt(arg) / 16}${parseInt(arg) % 16}`) || 0x00000000
@@ -86,7 +86,7 @@ export default class Command extends BaseCommand {
                 MessageType.extendedText
             )
         } else if (!M.quoted?.message) {
-            M.reply('Posting Text Status ✨')
+            M.reply('ඔබගේ ලියමන පලකරමින් සිටිමි ✨')
             const text = args[0] || ''
             M.reply(`text : ${text}`)
             // const backgroundArgb = args.slice(3).map((arg) => `${parseInt(arg) / 16}${parseInt(arg) % 16}`) || 0x00000000
