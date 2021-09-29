@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'google',
             aliases: ["g", "search"],
-            description: 'Search on the web ',
+            description: 'Google search කිරීමට',
             category: 'dev',
             dm: true,
             usage: `${client.config.prefix}google [query]`
@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
         if (!this.client.config.mods?.includes(M.sender.jid)) return void null;
         if (!this.client.config.gkey) return void null;
-        if (!joined) return void M.reply('🔎 Provide a search term');
+        if (!joined) return void M.reply('🔎 search කිරීම සඳහා වචනයක් type කරන්න');
         const term = joined.trim()
         await axios.get(`https://www.googleapis.com/customsearch/v1?q=${term}&key=${this.client.config.gkey}&cx=baf9bdb0c631236e5`).then(res => {
         // console.log(res);
@@ -31,7 +31,7 @@ export default class Command extends BaseCommand {
             result += `*👾${index}.Title* : ${item.title}\n*🔗Link* : ${item.link}\n*📖Snippet* : ${item.snippet}\n\n`
             index++;
         }
-        return void M.reply(`🔍Result for *${term}*\n\n\n ${result}`)
+        return void M.reply(`🔍ඔබගේ සෙවීමෙහි ප්‍රතිපල *${term}*\n\n\n ${result}`)
         }).catch(err => {
             M.reply(`🔍 Error: ${err}`)
         }
