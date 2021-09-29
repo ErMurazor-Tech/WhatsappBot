@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'sticker',
-            description: 'Converts images/videos into stickers',
+            description: 'ඔබගේ පින්තූරය හෝ වීඩියෝව ස්ටිකරයක් බවට පත් කරයි',
             category: 'utils',
             usage: `${client.config.prefix}sticker [(as caption | tag)[video | image]]`,
             baseXp: 30
@@ -23,12 +23,12 @@ export default class Command extends BaseCommand {
         else if (M.WAMessage.message?.imageMessage)
             buffer = await this.client.downloadMediaMessage(M.WAMessage)
         else if (M.quoted?.message?.message?.videoMessage) 
-            return void M.reply(`*Gif/Video to Sticker* feature is currently unavailable.\nYou can still use Image to Sticker though!!`)
+            return void M.reply(`*Gif/Video to Sticker*; සේවාව දැනට භාවිතා කිරීමට නොහැක.\nනමුත් ඔබට පින්තූර භාවිතා කල හැක!!`)
             // buffer = await this.client.downloadMediaMessage(M.quoted.message)
         else if (M.WAMessage.message?.videoMessage) 
-            return void M.reply(`*Gif/Video to Sticker* feature is currently unavailable.\nYou can still use Image to Sticker though!!`)
+            return void M.reply(`*Gif/Video to Sticker*; සේවාව දැනට භාවිතා කිරීමට නොහැක.\nනමුත් ඔබට පින්තූර භාවිතා කල හැක!!`)
             // buffer = await this.client.downloadMediaMessage(M.WAMessage)
-        if (!buffer) return void M.reply(`You didn't provide any Image/Video to convert`)
+        if (!buffer) return void M.reply(`ඔබ කිසිඳු පින්තූරයක් හෝ වීඩියෝවක් එවා නැත`)
         // flags.forEach((flag) => (joined = joined.replace(flag, '')))
         parsedArgs.flags.forEach((flag) => (parsedArgs.joined = parsedArgs.joined.replace(flag, '')))
         const pack = parsedArgs.joined.split('|')
