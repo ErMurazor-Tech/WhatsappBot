@@ -7,7 +7,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'mods',
-            description: "Displays the Moderators' contact info",
+            description: "ඇඩ්මින් වරයාගේ සම්බන්ධතා විස්තර පෙන්වයි",
             category: 'general',
             usage: `${client.config.prefix}mods`,
             aliases: ['moderators', 'mod', 'owner']
@@ -24,7 +24,7 @@ export default class Command extends BaseCommand {
                     user.notify || user.vname || user.name || 'null'
                 }*\n🍀 *Contact: https://wa.me/+${user?.jid?.split('@')[0]}*\n\n`)
         )
-        text += `\nTo deploy your own Bot or To support Kaoi👾\nVisit : https://github.com/PrajjwalDatir/Kaoi `
+        text += `\nඔබගේම බොට් කෙනෙකුව සාදගැනීම සඳහා මෙම සබැඳියට පිවිසෙන්න😕❤\n: https://github.com/ErMurazor-Tech/WhatsappBot `
         return void M.reply(text)
     }
 }
