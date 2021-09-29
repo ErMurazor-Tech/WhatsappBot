@@ -7,7 +7,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'enable',
-            description: 'Enables the given command',
+            description: 'ඔබ විසින් ලබා දුන් command එකක් නැවත සක්‍රීය කරයි',
             category: 'dev',
             dm: true,
             usage: `${client.config.prefix}enable [command]`
@@ -17,12 +17,12 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
         if (!this.client.config.mods?.includes(M.sender.jid)) return void null
         const key = joined.toLowerCase().trim()
-        if (!key) return void (await M.reply(`Provide the command you want to enable`))
+        if (!key) return void (await M.reply(`සක්‍රීය කිරීමට අවශ්‍ය command එක type කරන්න`))
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
-        if (!command) return void (await M.reply(`No command found`))
+        if (!command) return void (await M.reply(`කිසිඳු command එකක් හමුවූයේ නැත`))
         if (!(await this.client.DB.disabledcommands.findOne({ command: command.config.command })))
-            return void M.reply(`${this.client.util.capitalize(command.config.command)} is already enabled`)
+            return void M.reply(`${this.client.util.capitalize(command.config.command)} command එක දැනටමත් සක්‍රීය කොට ඇත`)
         await this.client.DB.disabledcommands.deleteOne({ command: command.config.command })
-        await M.reply(`*${this.client.util.capitalize(command.config.command)}* is now Enabled`)
+        await M.reply(`*${this.client.util.capitalize(command.config.command)}* command එක සක්‍රීය විය`)
     }
 }
