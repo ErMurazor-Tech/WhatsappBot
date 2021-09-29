@@ -7,7 +7,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'hi',
-            description: 'Well....',
+            description: 'Hi....',
             category: 'misc',
             usage: `${client.config.prefix}hi`,
         })
