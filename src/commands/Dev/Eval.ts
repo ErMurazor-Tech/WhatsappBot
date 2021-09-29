@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
         if (!this.client.config.mods?.includes(M.sender.jid)) return void null
         let out: string
         try {
-            const output = eval(parsedArgs.joined) || 'Executed JS Successfully!'
+            const output = eval(parsedArgs.joined) || 'Executed JS Successfully!!'
             console.log(output)
             out = JSON.stringify(output)
         } catch (err) {
