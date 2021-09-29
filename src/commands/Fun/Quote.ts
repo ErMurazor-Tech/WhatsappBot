@@ -8,7 +8,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'quote',
-            description: 'random quote.',
+            description: 'අහඹු ලෙස quote එකක් ලබාගත හැක.',
             aliases: ['q'],
             category: 'fun',
             usage: `${client.config.prefix}quote`
