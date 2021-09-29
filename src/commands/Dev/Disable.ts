@@ -7,7 +7,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'disable',
-            description: 'Disables the given command from being used',
+            description: 'ඔබට අවශ්‍ය command එක සමූහයෙහි සාමාජිකයන් හට තහනම් කරයි.',
             category: 'dev',
             dm: true,
             usage: `${client.config.prefix}disable [command] | (reason)`
@@ -18,11 +18,11 @@ export default class Command extends BaseCommand {
         if (!this.client.config.mods?.includes(M.sender.jid)) return void null
         const split = joined.split('|')
         const key = split[0].toLowerCase().trim()
-        if (!key) return void (await M.reply(`Provide the command you want to disable`))
+        if (!key) return void (await M.reply(`ඔබට තහනම් කිරීමට අවශ්‍ය command එක type කරන්න`))
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
-        if (!command) return void (await M.reply(`No command found`))
+        if (!command) return void (await M.reply(`කිසිඳු command එකක් හමු වූයේ නැත`))
         if (await this.client.DB.disabledcommands.findOne({ command: command.config.command }))
-            return void M.reply(`${command.config.command} is already disabled`)
+            return void M.reply(`${command.config.command} මෙම command එක දැනටමත් තහනම් කර ඇත`)
         await new this.client.DB.disabledcommands({
             command: command.config.command,
             reason: (split[1] || '').trim() || ''
