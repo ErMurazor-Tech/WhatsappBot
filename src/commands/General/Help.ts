@@ -7,7 +7,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'help',
-            description: 'Displays the help menu or shows the info of the command provided',
+            description: 'ප්‍රධාන මෙනුව හෝ command එකක් පිලිබඳ විස්තර සපයයි',
             category: 'general',
             usage: `${client.config.prefix}help (command_name)`,
             aliases: ['h']
@@ -29,7 +29,7 @@ export default class Command extends BaseCommand {
                     categories[info.config.category].push(info)
                 }
             }
-            let text = `❤ *Queen Hesh Command List* ❤\n\n`
+            let text = `❤ *Queen Hesh ගේ Command List එක* ❤\n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n❐ \`\`\`${categories[
@@ -38,12 +38,12 @@ export default class Command extends BaseCommand {
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\`\n\n`
             return void M.reply(
-                `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
+                `${text} 🗃️ *සටහන: ඔබට යම් විධානයක් පිලිබඳ තොරතුරු ලබාගැනීමට අවශ්‍ය නම් පහත පියවර අනුගමනය කරන්න. ${this.client.config.prefix}help <අවශ්‍ය විධානය> යෙදීම මගින් ඔබට ඒ පිලිබඳ විස්තර ලබාගත හැක*`
             )
         }
         const key = parsedArgs.joined.toLowerCase()
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
-        if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
+        if (!command) return void M.reply(`කිසිඳු විධානයක් හමුවුනේ නැත | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
             `🎫 *Command:* ${this.client.util.capitalize(command.config?.command)}\n🎗️ *Status:* ${
