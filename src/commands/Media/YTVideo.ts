@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'ytv',
-            description: 'Downloads given YT Video',
+            description: 'ඔබ ලබාදුන් YouTube සබැඳිය වීඩියෝවක් ලෙස ලබාගත හැක',
             category: 'media',
             aliases: ['ytvideo'],
             usage: `${client.config.prefix}ytv [URL]`,
@@ -18,15 +18,15 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        if (!M.urls.length) return void M.reply('🔎 Provide the URL of the YT video you want to download')
+        if (!M.urls.length) return void M.reply('🔎 ඔබට බාගත කිරීමට අවශ්‍ය වීඩියෝවෙහි සබැඳිය ලබාදෙන්න')
         const video = new YT(M.urls[0], 'video')
-        if (!video.validateURL()) return void M.reply(`Provide a Valid YT URL`)
+        if (!video.validateURL()) return void M.reply(`වලංගු සබැඳියක් ලබාදෙන්න`)
         const { videoDetails } = await video.getInfo()
-        M.reply('❤ sending...')
+        M.reply('❤ වීඩියෝව එවමින් පවතී...')
         if (Number(videoDetails.lengthSeconds) > 1800)
-            return void M.reply('⚓ Cannot Download videos longer than 30 Minutes')
+            return void M.reply('⚓ විනාඩි 30 කට වැඩි වීඩියෝ එවීමට නොහැක')
         M.reply(await video.getBuffer(), MessageType.video).catch((reason: Error) =>
-            M.reply(`❌ an error occupered, Reason: ${reason}`)
+            M.reply(`❌ දෝෂයක් හටගැණුනි, හේතුව: ${reason}`)
         )
     }
 }
