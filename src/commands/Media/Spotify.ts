@@ -24,9 +24,9 @@ export default class Command extends BaseCommand {
         const track = new Spotify(url)
         const info = await track.getInfo()
         if (info.error) return void M.reply(`⚓ දෝෂයක් : ${url}. සබැඳිය නිවරැදිදැයි පරීක්ෂා කොට බලන්න`)
-        const caption = `🎧 *Title:* ${info.name || ''}\n🎤 *Artists:* ${(info.artists || []).join(',')}\n💽 *Album:* ${
+        const caption = `🎧 *තේමාව:* ${info.name || ''}\n🎤 *ගායකයා:* ${(info.artists || []).join(',')}\n💽 *ඇල්බමය:* ${
             info.album_name
-        }\n📆 *Release Date:* ${info.release_date || ''}`
+        }\n📆 *එලිදැක්වූ දිනය:* ${info.release_date || ''}`
         M.reply(
             await request.buffer(info?.cover_url as string),
             MessageType.image,
