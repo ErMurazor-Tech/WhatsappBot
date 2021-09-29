@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'karaoke',
-            description: 'Gives you karaoke song playable on WhatsApp',
+            description: 'ඔබ නම් කරන ලද කැරෝකේ ගීතය ලබාදේ',
             category: 'media',
             aliases: ['sing'],
             usage: `${client.config.prefix}karaoke [term]`,
@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void M.reply('Please provide a search term')
+        if (!joined) return void M.reply('ගීතය සඳහා නමක් ලබා දෙන්න')
         const term = joined.trim()
         const { videos } = await yts(term + ' karaoke song')
         if (!videos || videos.length <= 0) return void M.reply(`No Matching videos found for the term *${term}*`)
