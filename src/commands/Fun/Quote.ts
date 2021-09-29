@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
                 const text = `📝 *Content:* ${response.data.content}\n\n*✍️ Author:* ${response.data.author}`
                 M.reply(text);
             }).catch(err => {
-                M.reply(`🔍 Error: ${err}`)
+                M.reply(`🔍 දෝෂයක්: ${err}`)
             }
             )
     };
