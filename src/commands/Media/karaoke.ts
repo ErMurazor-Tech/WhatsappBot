@@ -20,8 +20,8 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
         if (!joined) return void M.reply('ගීතය සඳහා නමක් ලබා දෙන්න')
         const term = joined.trim()
-        const { videos } = await yts(term + ' karaoke song')
-        if (!videos || videos.length <= 0) return void M.reply(`No Matching videos found for the term *${term}*`)
+        const { videos } = await yts(term + ' කැරෝකේ ගීතය')
+        if (!videos || videos.length <= 0) return void M.reply(`ඔබගේ වචනයට ගැලපෙන වීඩියෝවක් හමුවූයේ නැත *${term}*`)
         const text = `Via Queen Hesh❤ && Void`
 
         this.client
@@ -29,14 +29,14 @@ export default class Command extends BaseCommand {
                 quoted: M.WAMessage,
                 contextInfo: {
                     externalAdReply: {
-                        title: `Search Term: ${term}`,
-                        body: `❤ Handcrafted for you by Queen Hesh ❤`,
+                        title: `සෙවුම් වචනය: ${term}`,
+                        body: `❤ Queen Hesh වෙතින් ❤`,
                         mediaType: 2,
                         thumbnailUrl: videos[0].thumbnail,
                         mediaUrl: videos[0].url
                     }
                 }
             })
-            .catch((reason: any) => M.reply(`an error occupered, Reason: ${reason}`))
+            .catch((reason: any) => M.reply(`දෝෂයක් හටගැණුනි, හේතුව: ${reason}`))
     }
 }
