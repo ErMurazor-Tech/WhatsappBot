@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'profile',
-            description: 'Displays user-profile 🌟',
+            description: 'පරිශීලක පැතිකඩ (User Profile) පෙන්වයි 🌟',
             category: 'general',
             usage: `${client.config.prefix}profile (@tag)`,
             aliases: ['p']
@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
         try {
             pfp = await this.client.getProfilePicture(user)
         } catch (err) {
-            M.reply(`Profile Picture not Accessible of ${username}`)
+            M.reply(`මෙම පරිශීලකයාගේ පින්තූරය පෙන්වීමට නොහැක ${username}`)
             pfp =
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Kawaii_robot_power_clipart.svg/640px-Kawaii_robot_power_clipart.svg.png'
         }
