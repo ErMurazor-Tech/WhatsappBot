@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'play',
-            description: '🎵 play a song with just search term!',
+            description: '🎵 ඔබට අවශ්‍ය ගීතය වාදනය කරයි!',
             category: 'media',
             aliases: ['music'],
             usage: `${client.config.prefix}play [term]`,
@@ -19,10 +19,10 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void M.reply('🔎 Provide a search term')
+        if (!joined) return void M.reply('🔎 ඔබට අවශ්‍ය ගීතයෙහි නම ලියන්න')
         const term = joined.trim()
         const { videos } = await yts(term)
-        if (!videos || videos.length <= 0) return void M.reply(`⚓ No Matching videos found for the term : *${term}*`)
+        if (!videos || videos.length <= 0) return void M.reply(`⚓ එම වචනයට ගැලපෙන වීඩියෝවක් හමුවූයෙ නැත : *${term}*`)
         const audio = new YT(videos[0].url, 'audio')
         if (!audio.url) return
         M.reply('❤ Sending...')
