@@ -21,14 +21,11 @@
 
 |Fun| usage|
 |----|--------|
-|Triggered| Tag a photo while commanding, given image would be triggered xD|
-|Chess| Launches a game of chess straight in the group chat, YES THIS IS THE FUTURE! EMBRACE IT!|
 
 |Misc| usage|
 |----|--------|
 |Delete| Deletes the quoted message, admin only feature|
 |Hi| WELL|
-|Void| View info :v|
 
 |Moderation| usage|
 |----|--------|
@@ -42,7 +39,6 @@ Activate| Activates certain bot features in a group chat|
 |----|--------|
 |Blur| Blurs the tagged image or the pfp of the user's commanding it|
 |Sticker| Converts the given gif/image into a webp sticker|
-|Subred| A random subreddit post based on the specified search would be fetched. (Sometimes nsfw posts can too be fetched so be careful)|
 
 |Dev| usage|
 |----|--------|
