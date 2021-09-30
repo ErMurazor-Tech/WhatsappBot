@@ -8,7 +8,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'ilv',
             description: 'ilv යන්නෙහි අරුත I Love You යන්නයි. විධානය යවා බලන්න...',
-            category: 'misc',
+            category: 'fun',
             usage: `${client.config.prefix}ilv`,
         })
     }
