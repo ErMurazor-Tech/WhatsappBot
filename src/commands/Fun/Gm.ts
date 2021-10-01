@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
         const n = ['./assets/images/gm1.jpg', './assets/images/gm2.jpg', './assets/images/gm3.jpg', './assets/images/gm4.jpg',]
         let hug = n[Math.floor(Math.random() * n.length)]
         return void this.client.sendMessage(M.from, {url : hug},
-            messagetype.image
+            messagetype.image,
             {mimetype : MimeType.jpg, caption : `ඔයාට සුබම සුබ උදෑසනක් වේවා ${M.mentioned.username}!❤❤`})
     }
 }
