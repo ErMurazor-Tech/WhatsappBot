@@ -16,12 +16,12 @@ export default class Command extends BaseCommand {
     }
     run = async (M:ISimplifiedMessage) : Promise<void> => {
         const user1 = M.sender.jid
-        const user2 = M.mentioned(0)
+        const user2 = M.mentioned[0]
 
         const n = ['./assets/images/gm1.jpg', './assets/images/gm2.jpg', './assets/images/gm3.jpg', './assets/images/gm4.jpg',]
         let hug = n[Math.floor(Math.random() * n.length)]
         return void this.client.sendMessage(M.from, {url : hug},
             MessageType.image,
-            {mimetype : Mimetype.jpg, caption : `ඔයාට සුබම සුබ උදෑසනක් වේවා ${M.mentioned(0).username}!❤❤`})
+            {mimetype : Mimetype.jpeg, caption : `ඔයාට සුබම සුබ උදෑසනක් වේවා ${M.mentioned[0].username}!❤❤`})
     }
 }
