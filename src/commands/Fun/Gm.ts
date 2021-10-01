@@ -7,12 +7,12 @@ import { ISimplifiedMessage } from '../../typings'
 import Command from '../_Command_Example'
 
 export default class Command extends BaseCommand {
-    constructor (client: WAClient , handler: MessageHandler) {
+    constructor (client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command : 'gm',
-            description : 'ඔබ සඳහන් කල පුද්ගලයන් වෙත සුභ උදෑසනක් පතයි',
-            category : 'fun',
-            usage : `${client.config.prefix}gm@<user>`,
+            command: 'gm',
+            description: 'ඔබ සඳහන් කල පුද්ගලයන් වෙත සුභ උදෑසනක් පතයි',
+            category: 'fun',
+            usage: `${client.config.prefix}gm@<user>`,
         })
     }
     run = async (M:ISimplifiedMessage) : Promise<void> => {
