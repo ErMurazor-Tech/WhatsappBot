@@ -22,6 +22,6 @@ export default class Command extends BaseCommand {
         let hug = n[Math.floor(Math.random() * n.length)]
         return void this.client.sendMessage(M.from, {url : hug},
             MessageType.image,
-            {mimetype : Mimetype.jpeg, caption : `ඔයාට සුබම සුබ උදෑසනක් වේවා @${user2.split('@')[]}!❤❤`, context : {mentionedJid :[user2]} })
+            {mimetype : Mimetype.jpeg, caption : `ඔයාට සුබම සුබ උදෑසනක් වේවා @${user2.split('@')[]}!❤❤`})
     }
 }
