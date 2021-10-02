@@ -86,15 +86,15 @@ Queen Hesh is a moderated fork of the Void re-edited by Me. You can make your Wh
 
 ### 😕 Contacts and Group
 
-#Whatsapp Bot Demo Group
-[![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JixKbZWvcb4Brn2dtH56jO)
+# Whatsapp Bot Demo Group
+# [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JixKbZWvcb4Brn2dtH56jO)
 
-#My Whatsapp Account
-[![WhatsApp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
+# My Whatsapp Account
+# [![WhatsApp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
 </br>
 <br>
 
 ### 😕 Contributor/s
 
-# [Er Murazor](https://github.com/ErMurazor-Tech")
+[Er Murazor](https://github.com/ErMurazor-Tech")
 </br>
