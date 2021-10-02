@@ -94,5 +94,5 @@ My Whatsapp Account
 </br>
 <br>
 ## 😕 Contributor/s
-# <a href="https://github.com/ErMurazor-Tech">
-</a>
+
+# <a href="https://github.com/ErMurazor-Tech"><img src="https://i.ibb.co/K6f6DVb/Queen-of-Hearts-full-243104-1.jpg" /></a>
