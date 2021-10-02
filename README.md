@@ -82,15 +82,12 @@ Queen Hesh is a moderated fork of the Void re-edited by Me. You can make your Wh
 |Ban| Bans the given user from using the bot|
 |Unban| Unbans the given user, after this he/she can use the bot again|
 
+<br>
 
-
-
-### 😕 Contscts and Group
+### 😕 Contacts and Group
 
 Whatsapp Bot Demo Group
-
 # [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JixKbZWvcb4Brn2dtH56jO)
 
 My Whatsapp Account
-
 # [![WhatsApp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
