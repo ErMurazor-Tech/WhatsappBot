@@ -46,17 +46,17 @@ export default class Command extends BaseCommand {
         if (!command) return void M.reply(`කිසිඳු විධානයක් හමුවුනේ නැත | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
-            `🎫 *Command:* ${this.client.util.capitalize(command.config?.command)}\n🎗️ *Status:* ${
+            `🎫 *විධානය:* ${this.client.util.capitalize(command.config?.command)}\n🎗️ *තත්වය:* ${
                 state ? 'Disabled' : 'Available'
-            }\n🀄 *Category:* ${this.client.util.capitalize(command.config?.category || '')}${
+            }\n🀄 *ප්‍රභේදය:* ${this.client.util.capitalize(command.config?.category || '')}${
                 command.config.aliases
-                    ? `\n🍥 *Aliases:* ${command.config.aliases.map(this.client.util.capitalize).join(', ')}`
+                    ? `\n🍥 *අනුකල්පනය:* ${command.config.aliases.map(this.client.util.capitalize).join(', ')}`
                     : ''
-            }\n🃏 *Group Only:* ${this.client.util.capitalize(
+            }\n🃏 *සමූහ තුල පමණි:* ${this.client.util.capitalize(
                 JSON.stringify(!command.config.dm ?? true)
-            )}\n🎀 *Usage:* ${command.config?.usage || ''}\n\n🔖 *Description:* ${command.config?.description || ''}`
+            )}\n🎀 *භාවිතය:* ${command.config?.usage || ''}\n\n🔖 *විස්තරය:* ${command.config?.description || ''}`
         )
     }
 
-    emojis = ['👨‍💻', '🌀', '🎴', '🔮', '👑', '🎈', '⚙️', '🍀']
+    emojis = ['❤', '❤', '❤', '❤', '❤', '❤', '❤', '❤',]
 }
