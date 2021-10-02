@@ -94,6 +94,5 @@ My Whatsapp Account
 </br>
 <br>
 ## 😕 Contributor/s
-<a href="https://github.com/ErMurazor-Tech">
-<img src="https://contrib.rocks/image?repo=ErMurazor-Tech/WhatsappBot" />
+# <a href="https://github.com/ErMurazor-Tech">
 </a>
