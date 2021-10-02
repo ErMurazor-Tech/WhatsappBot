@@ -96,4 +96,4 @@ My Whatsapp Account
 
 ### 😕 Contributor/s
 
-# [Er Murazor]<a href="https://github.com/ErMurazor-Tech"><img src="https://i.ibb.co/K6f6DVb/Queen-of-Hearts-full-243104-1.jpg" /></a>
+# [Er Murazor]<a href="https://github.com/ErMurazor-Tech"></a>
