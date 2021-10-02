@@ -93,6 +93,7 @@ My Whatsapp Account
 # [![WhatsApp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
 </br>
 <br>
-## 😕 Contributor/s
 
-# <a href="https://github.com/ErMurazor-Tech"><img src="https://i.ibb.co/K6f6DVb/Queen-of-Hearts-full-243104-1.jpg" /></a>
+### 😕 Contributor/s
+
+# [Er Murazor]<a href="https://github.com/ErMurazor-Tech"><img src="https://i.ibb.co/K6f6DVb/Queen-of-Hearts-full-243104-1.jpg" /></a>
