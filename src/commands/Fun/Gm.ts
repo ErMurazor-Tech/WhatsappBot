@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'gm',
             description: `සුභ උදෑසනක් පැතීමට`,
-            category: 'reactions',
+            category: 'fun',
             usage: `${client.config.prefix}gm [tag/quote users]`
         })
     }
