@@ -1,34 +1,51 @@
 import { MessageType, Mimetype } from '@adiwajshing/baileys'
 import MessageHandler from '../../Handlers/MessageHandler'
 import BaseCommand from '../../lib/BaseCommand'
-import request from '../../lib/request'
 import WAClient from '../../lib/WAClient'
 import { ISimplifiedMessage } from '../../typings'
+import { tmpdir } from 'os'
+import { exec } from 'child_process'
+import { readFile, unlink, writeFile } from 'fs/promises'
+import { promisify } from 'util'
 
 export default class Command extends BaseCommand {
-    constructor (client: WAClient, handler: MessageHandler) {
+    constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'gm',
-            description: 'ඔබ සඳහන් කල පුද්ගලයන් වෙත සුභ උදෑසනක් පතයි',
-            category: 'fun',
-            usage: `${client.config.prefix}gm@<user>`,
+            command: 'bite',
+            description: `To Bite Humans`,
+            category: 'reactions',
+            usage: `${client.config.prefix}bite [tag/quote users]`
         })
     }
-    run = async (M:ISimplifiedMessage) : Promise<void> => {
-        const immortals = [M.sender, this.client.user.jid]
-        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
-        if (!M.mentioned.length || !M.mentioned[0]) return void M.reply('සුබපැතීමට අවශ්‍ය පුද්ගලයාව සඳහන් කරන්න')
-        let text = '*STATE*\n\n'
-        for (const user of M.mentioned) {
-            if (immortals.includes(user)) continue
-            const data = await this.client.getUser(user)
-            const info = this.client.getContact(user)
-            const username = info.notify || info.vname || info.name || user.split('@')[0]
-        const n = ['./assets/images/gm1.jpg', './assets/images/gm2.jpg', './assets/images/gm3.jpg', './assets/images/gm4.jpg',]
-        let hug = n[Math.floor(Math.random() * n.length)]
-        return void this.client.sendMessage(M.from, {url : hug},
-            MessageType.image,
-            {mimetype: Mimetype.jpeg, caption: `ඔයාට සුබම සුබ උදෑසනක් වේවා ${username}!❤❤`})
+    exec = promisify(exec)
+
+    GIFBufferToVideoBuffer = async (image: Buffer): Promise<Buffer> => {
+        const filename = `${tmpdir()}/${Math.random().toString(36)}`
+        await writeFile(`${filename}.gif`, image)
+        await this.exec(
+            `ffmpeg -f gif -i ${filename}.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${filename}.mp4`
+        )
+        const buffer = await readFile(`${filename}.mp4`)
+        Promise.all([unlink(`${filename}.mp4`), unlink(`${filename}.gif`)])
+        return buffer
     }
-}
+    run = async (M: ISimplifiedMessage): Promise<void> => {
+        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
+        if (!M.mentioned.length) M.mentioned.push(M.sender.jid)
+        M.reply(
+            await this.GIFBufferToVideoBuffer(
+                await this.client.getBuffer(
+                    (
+                        await this.client.fetch<{ url: string }>(`https://i.ibb.co/5TZ3CSv/GoodM.gif`)
+                    ).url
+                )
+            ),
+            MessageType.video,
+            Mimetype.gif,
+            [M.sender.jid, ...M.mentioned],
+            `*@${M.sender.jid.split('@')[0]} සුභපැතුවා ${M.mentioned
+                .map((user) => (user === M.sender.jid ? 'ඔහුටම' : `@${user.split('@')[0]}`))
+                .join(', ')}*`
+        )
+    }
 }
