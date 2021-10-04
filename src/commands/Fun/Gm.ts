@@ -11,10 +11,10 @@ import { promisify } from 'util'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'bite',
-            description: `To Bite Humans`,
+            command: 'gm',
+            description: `සුභ උදෑසනක් පැතීමට`,
             category: 'reactions',
-            usage: `${client.config.prefix}bite [tag/quote users]`
+            usage: `${client.config.prefix}gm [tag/quote users]`
         })
     }
     exec = promisify(exec)
