@@ -44,7 +44,7 @@ export default class Command extends BaseCommand {
             Mimetype.gif,
             [M.sender.jid, ...M.mentioned],
             `*@${M.sender.jid.split('@')[0]} හැපුවා ${M.mentioned
-                .map((user) ව => (user === M.sender.jid ? 'තමන්වම' : `@${user.split('@')[0]}`))
+                .map((user) 'ව', => (user === M.sender.jid ? 'තමන්වම' : `@${user.split('@')[0]}`))
                 .join(', ')}*`
         )
     }
