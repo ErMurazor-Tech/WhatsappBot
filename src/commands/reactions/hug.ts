@@ -11,10 +11,10 @@ import { promisify } from 'util'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'hug',
-            description: 'Hugging releases stress',
+            command: 'bite',
+            description: `To Bite Humans`,
             category: 'reactions',
-            usage: `${client.config.prefix}hug`
+            usage: `${client.config.prefix}bite [tag/quote users]`
         })
     }
     exec = promisify(exec)
@@ -36,14 +36,14 @@ export default class Command extends BaseCommand {
             await this.GIFBufferToVideoBuffer(
                 await this.client.getBuffer(
                     (
-                        await this.client.fetch<{ url: string }>(`https://api.waifu.pics/sfw/hug`)
+                        await this.client.fetch<{ url: string }>(`https://api.waifu.pics/sfw/bite`)
                     ).url
                 )
             ),
             MessageType.video,
             Mimetype.gif,
             [M.sender.jid, ...M.mentioned],
-            `*@${M.sender.jid.split('@')[0]} Hugged ${M.mentioned
+            `*@${M.sender.jid.split('@')[0]} Bit ${M.mentioned
                 .map((user) => (user === M.sender.jid ? 'Themselves' : `@${user.split('@')[0]}`))
                 .join(', ')}*`
         )
