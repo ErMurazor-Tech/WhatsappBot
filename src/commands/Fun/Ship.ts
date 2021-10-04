@@ -54,7 +54,8 @@ export default class Command extends BaseCommand {
         caption += `${sentence}`
 
         return void M.reply(
-            await this.client.util.GIFBufferToVideoBuffer(await this.client.getBuffer(gifLink)),
+            await this.client.util.GIFBufferToVideoBuffer(
+                await this.client.getBuffer(gifLink)),
             MessageType.video,
             Mimetype.gif,
             [user1, user2],
