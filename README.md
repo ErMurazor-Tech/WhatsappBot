@@ -37,6 +37,6 @@ Queen Hesh යනු මා විසින් The Void Bot ගේ මූලක�
   - [![Whatsapp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
 
 
-### 😕 Contributor/s
+## 😕 Contributor/s
 
 💕 [Er Murazor](https://github.com/ErMurazor-Tech")
