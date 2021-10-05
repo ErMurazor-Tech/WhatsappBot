@@ -30,11 +30,11 @@ Queen Hesh යනු මා විසින් The Void Bot ගේ මූලක�
 
 ### 😕 Contacts and Group
 
-💕 Whatsapp Bot Demo Group
- # [![Whatsapp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JixKbZWvcb4Brn2dtH56jO)
+- Whatsapp Bot Demo Group
+  [![Whatsapp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JixKbZWvcb4Brn2dtH56jO)
 
-💕 My Whatsapp Account
-# [![Whatsapp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
+- My Whatsapp Account
+ [![Whatsapp Account](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94760423852)
 
 
 ### 😕 Contributor/s
