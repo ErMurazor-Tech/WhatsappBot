@@ -5,9 +5,11 @@ import BaseCommand from '../../lib/BaseCommand'
 import WAClient from '../../lib/WAClient'
 import { IParsedArgs, ISimplifiedMessage } from '../../typings'
 
-@DefineCommand("sticker2", {
-    aliases: ["stkr"],
-    category: "utils",
+export default class Command extends BaseCommand {
+    constructor(client: WAClient, handler: MessageHandler) {
+        super(client, handler, {
+    කොම්මන්ඩ්: 'sticker2',
+    category: 'utils',
     cooldown: 20,
     description: {
         content: "ඔබ එවූ වීඩියෝවකින් හෝ පින්තූරයකින් ස්ටිකරයක් සාදයි.",
