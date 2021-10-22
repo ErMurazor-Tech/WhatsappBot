@@ -39,6 +39,6 @@ export default class Command extends BaseCommand {
                     }
                 }
             })
-            .catch((reason: Error) => M.reply(`❌ දෝෂයක් හටගැණුනි, හේතුව: ${reason}`))
+            .catch((reason: Error) => M.reply(`❌ දෝෂයක් හටගැණුනි.`))
     }
 }
