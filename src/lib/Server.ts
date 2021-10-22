@@ -15,7 +15,7 @@ export default class Server extends EventEmitter {
         this.WARouter.get('/qr', (req, res) => {
             if (!this.client.QR)
                 return void res.json({
-                    message: this.client.state === 'open' ? "You're already authenticated" : 'QR is not generated yet'
+                    message: this.client.state === 'open' ? "You're already authenticated!" : 'QR is not generated yet'
                 })
             res.contentType('image/png')
             return void res.send(this.client.QR)
