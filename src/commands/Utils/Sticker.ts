@@ -26,7 +26,7 @@ export default class Command extends BaseCommand {
             buffer = await this.client.downloadMediaMessage(M.quoted.message)
             // 
         else if (M.WAMessage.message?.videoMessage) 
-            buffer = await this.client.downloadMediaMessage(M.quoted.message)
+            buffer = await this.client.downloadMediaMessage(M.WAMessage)
             // 
         if (!buffer) return void M.reply(`ඔබ කිසිඳු පින්තූරයක් හෝ වීඩියෝවක් එවා නැත`)
         // flags.forEach((flag) => (joined = joined.replace(flag, '')))
