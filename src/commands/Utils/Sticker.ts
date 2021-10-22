@@ -23,10 +23,10 @@ export default class Command extends BaseCommand {
         else if (M.WAMessage.message?.imageMessage)
             buffer = await this.client.downloadMediaMessage(M.WAMessage)
         else if (M.quoted?.message?.message?.videoMessage) 
-            return void M.reply(`*Gif/Video to Sticker*; සේවාව දැනට භාවිතා කිරීමට නොහැක.\nනමුත් ඔබට පින්තූර භාවිතා කල හැක!!`)
-            // buffer = await this.client.downloadMediaMessage(M.quoted.message)
+            buffer = await this.client.downloadMediaMessage(M.quoted.message)
+            // 
         else if (M.WAMessage.message?.videoMessage) 
-            return void M.reply(`*Gif/Video to Sticker*; සේවාව දැනට භාවිතා කිරීමට නොහැක.\nනමුත් ඔබට පින්තූර භාවිතා කල හැක!!`)
+            buffer = await this.client.downloadMediaMessage(M.quoted.message)
             // buffer = await this.client.downloadMediaMessage(M.WAMessage)
         if (!buffer) return void M.reply(`ඔබ කිසිඳු පින්තූරයක් හෝ වීඩියෝවක් එවා නැත`)
         // flags.forEach((flag) => (joined = joined.replace(flag, '')))
